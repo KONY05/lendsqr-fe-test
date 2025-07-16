@@ -1,7 +1,7 @@
 function page() {
     return (
         <main>
-            <h1 className="font-avenir font-bold">hello</h1>
+            <h1 className="font-bold">hello</h1>
         </main>
     )
 }
