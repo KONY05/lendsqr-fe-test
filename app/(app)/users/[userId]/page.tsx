@@ -12,7 +12,7 @@ async function page({ params }: { params: Promise<{ userId: string }> }) {
   const userDetails = mockData.filter((user: User) => user.id === userId);
 
   return (
-    <main className="flex flex-1 flex-col space-y-5 overflow-hidden bg-[#00000008] px-5 py-5 md:space-y-10 md:px-[60px] md:py-[60px]">
+    <main className="flex flex-1 flex-col space-y-5 overflow-auto bg-[#00000008] px-5 py-5 md:space-y-10 md:px-[60px] md:py-[60px]">
       <Link href="/users">
         <p className="flex cursor-pointer items-center gap-3 text-[#545F7D] underline-offset-2 hover:underline">
           <MoveLeft /> Back to Users
@@ -32,8 +32,10 @@ async function page({ params }: { params: Promise<{ userId: string }> }) {
         </div>
       </div>
 
-      <UserDetailsHeader data={userDetails} />
-      {/* <UserDetails data={ mockData}/> */}
+      <div className="space-y-[30px]">
+        <UserDetailsHeader data={userDetails} />
+        <UserDetails data={userDetails} />
+      </div>
     </main>
   );
 }

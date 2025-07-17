@@ -5,7 +5,7 @@ function StarTier({ tier = 1 }) {
   const activeTier = Math.min(Math.max(tier, 1), maxStars); // Ensure tier is between 1 and 3
 
   return (
-    <div className="flex gap-1">
+    <span className="flex gap-1">
       {Array.from({ length: maxStars }, (_, index) => (
         <Image
           key={index}
@@ -15,7 +15,7 @@ function StarTier({ tier = 1 }) {
           height={15}
         />
       ))}
-    </div>
+    </span>
   );
 }
 

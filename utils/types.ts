@@ -15,7 +15,7 @@ export type User = {
   dateJoined: string;
   educationAndEmployment: {
     officeEmail: string;
-    loanReplacement: string;
+    loanRepayment: string;
     monthlyIncome: string;
     employmentStatus: string;
     levelOfEducation: string;
@@ -23,10 +23,10 @@ export type User = {
     durationOfEmployment: string;
   };
   guarantors: {
+    fullName: string;
     emailAddress: string;
-    firstName: string;
-    lastName: string;
     phoneNumber: string;
+    relationship: string;
   }[];
   loans: {
     hasLoan: boolean;
