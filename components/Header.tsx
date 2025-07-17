@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 
 function Header() {
   return (
-    <header className="flex items-center justify-between py-3 pr-4 pl-3.5 shadow-lg md:pr-9 md:pl-[30px] lg:py-[35px]">
+    <header className="flex w-full items-center justify-between gap-2 py-3 pr-4 pl-3.5 shadow-lg md:pr-9 md:pl-[30px] lg:py-[20px]">
       <div>
         <Image
           src="/logo.png"
@@ -66,8 +66,8 @@ function Header() {
             height={10}
           />
         </div>
-          </div>
-          {/* TODO: implement mobile nav */}
+      </div>
+      {/* TODO: implement mobile nav */}
       <Menu className="lg:hidden" />
     </header>
   );
