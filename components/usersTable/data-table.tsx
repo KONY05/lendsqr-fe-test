@@ -17,6 +17,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { DataTablePagination } from "../DataTablePagination";
+import { User } from "@/utils/types";
+import { useRouter } from "next/navigation";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -33,13 +35,18 @@ export function DataTable<TData, TValue>({
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
+  const router = useRouter();
+
+  function handleRowClick(row: User) {
+    router.push(`/users/${row.id}`);
+  }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex h-full flex-col">
       {/* Table container with fixed height and scroll */}
-      <div className="flex min-h-0 rounded-md border md:px-[30px] bg-white overflow-auto">
+      <div className="flex min-h-0 overflow-auto rounded-md border bg-white md:px-[30px]">
         <Table>
-          <TableHeader className="sticky top-0 bg-white z-10">
+          <TableHeader className="sticky top-0 z-10 bg-white">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -68,7 +75,11 @@ export function DataTable<TData, TValue>({
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="py-[21px] text-sm cursor-pointer">
+                    <TableCell
+                      key={cell.id}
+                      className="cursor-pointer py-[21px] text-sm"
+                      onClick={() => handleRowClick(row.original as User)}
+                    >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext(),
@@ -90,9 +101,9 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-      
+
       {/* Pagination stays at bottom */}
-      <div className="flex-shrink-0 mt-5">
+      <div className="mt-5 flex-shrink-0">
         <DataTablePagination table={table} />
       </div>
     </div>

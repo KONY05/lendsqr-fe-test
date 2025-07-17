@@ -7,9 +7,21 @@ export type UserDashboardBoxProps = {
 export type User = {
   id: string;
   username: string;
-  bankDetails: object;
+  bankDetails: {
+    bankName: string;
+    accountNumber: string;
+    accountBalance: string;
+  };
   dateJoined: string;
-  educationAndEmployment: object;
+  educationAndEmployment: {
+    officeEmail: string;
+    loanReplacement: string;
+    monthlyIncome: string;
+    employmentStatus: string;
+    levelOfEducation: string;
+    sectorOfEmployment: string;
+    durationOfEmployment: string;
+  };
   guarantors: {
     emailAddress: string;
     firstName: string;
@@ -40,4 +52,12 @@ export type User = {
   phoneNumber: string;
   createdAt: string;
   isActive: boolean;
+  personalInfo: {
+    bvn: string;
+    gender: string;
+    children: string;
+    fullName: string;
+    maritalStatus: string;
+    typeOfResidence: string;
+  };
 };

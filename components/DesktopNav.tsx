@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 
 function DesktopNav() {
   const pathname = usePathname();
-  console.log(pathname);
 
   const isActive = (path: string) => pathname.startsWith(`/${path}`);
 
