@@ -52,7 +52,7 @@ function UserDetailsHeader({ data }: { data: User[] }) {
         {userDetailsTabs.map((tab, index) => (
           <p
             key={tab}
-            className={`py-2.5 ${activeTab === index && "cursor-pointer border-b-2 border-[#39CDCC] max-[321px]:px-[10px] px-[25px] text-[#39CDCC]"}`}
+            className={`py-2.5 cursor-pointer ${activeTab === index && " border-b-2 border-[#39CDCC] max-[321px]:px-[10px] px-[25px] text-[#39CDCC]"}`}
             onClick={() => setActiveTab(index)}
           >
             {tab}
