@@ -83,7 +83,6 @@ function Header() {
           />
         </div>
       </div>
-      {/* TODO: implement mobile nav */}
 
       <Sheet>
         <SheetTrigger>
