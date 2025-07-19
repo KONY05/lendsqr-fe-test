@@ -11,6 +11,7 @@ import { useEffect } from "react";
 
 function UserIdClient({ userDetails }: { userDetails: User[] }) {
   const router = useRouter();
+  
 
   useEffect(() => {
     // check if the user is logged in to access data
@@ -20,6 +21,7 @@ function UserIdClient({ userDetails }: { userDetails: User[] }) {
       router.push("/login"); // redirect to login page if not logged in
     }
   }, [router]);
+  
   return (
     <main className="flex flex-1 flex-col space-y-5 overflow-auto bg-[#00000008] px-5 py-5 md:space-y-10 md:px-[60px] md:py-[60px]">
       <Link href="/users">

@@ -93,7 +93,7 @@ function LoginForm() {
         </p>
         <Button
           type="submit"
-          className="w-full rounded-[8px] bg-[#39CDCC] text-sm font-semibold text-white uppercase hover:bg-[#39cdcddd]"
+          className="w-full cursor-pointer rounded-[8px] bg-[#39CDCC] text-sm font-semibold text-white uppercase hover:bg-[#39cdcddd]"
         >
           Log in
         </Button>

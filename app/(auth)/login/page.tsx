@@ -1,7 +1,20 @@
+"use client";
+
 import LoginForm from "@/components/LoginForm";
 import Image from "next/image";
+import { redirect } from "next/navigation";
+import { useEffect } from "react";
 
-function page() {
+function LoginPage() {
+  useEffect(() => {
+    // check if the user is logged in to access data
+    const isLoggedIn = localStorage.getItem("user");
+
+    if (isLoggedIn) {
+      redirect("/users"); // redirect to users page if logged in
+    }
+  }, []);
+
   return (
     <main>
       {/* MOBILE VIEW */}
@@ -65,4 +78,4 @@ function page() {
   );
 }
 
-export default page;
+export default LoginPage;
